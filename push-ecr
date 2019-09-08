@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+base=_REMOVED_.dkr.ecr.us-east-1.amazonaws.com
+repo=reactioncam/transcode-base
+
+docker build -t $repo .
+echo
+docker tag $repo:latest $base/$repo:latest
+docker push $base/$repo:latest

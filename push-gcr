@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+project=roger-api
+container=transcode-base
+
+docker build -t gcr.io/$project/$container .
+echo
+gcloud docker -- push gcr.io/$project/$container
